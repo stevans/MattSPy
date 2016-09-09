@@ -1,9 +1,13 @@
 
-def now():
-#convert flux to mag
+def now(flux_arr, units = 'nJy'):
+	#convert flux to mag
 
-import numpy as np
+	import numpy as np
 
-units = 'uJy'
 
-mag_arr = -2.5*np.log10(flux_arr]) + 31.4
+	if units == 'nJy':
+		zeropoint = 31.4
+
+	mag_arr = -2.5*np.log10(flux_arr]) + zeropoint
+
+	return mag_arr
